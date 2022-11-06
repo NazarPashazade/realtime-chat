@@ -8,10 +8,12 @@ import { messageRouter } from "./modules/message/routers/message.router";
 import { errorHandler } from "./modules/middlewares/error-handler";
 import { postRouter } from "./modules/post/routers/post.router";
 import { userRouter } from "./modules/user/routers/user.router";
+const cors = require('cors')
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(errorHandler);
 
 app.use("/auth", authRouter);
