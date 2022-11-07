@@ -12,7 +12,9 @@ import Typography from '@mui/material/Typography';
 import { useForm } from 'react-hook-form';
 import { loginAPI } from '../../api/user.api';
 import PasswordTextField from '../../components/PasswordTextField';
+import { Notify } from '../../components/Notification';
 import { loginSchema } from './loginSchema';
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -26,14 +28,14 @@ function Login() {
 
 
     const login = (data) => {
-        loginAPI(data)
+         loginAPI(data)
     };
 
 
     return (
 
         <>
-
+ 
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />

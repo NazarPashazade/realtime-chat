@@ -9,7 +9,6 @@ const Login = React.lazy(() => import('../pages/login/Login'))
 const Dashboard = React.lazy(() => import('../pages/Dashboard'))
 const Posts = React.lazy(() => import('../pages/posts/Posts'))
 
-
 function Router() {
 
   return (
@@ -24,7 +23,7 @@ function Router() {
               <Route path=":username" element={<ChatContent />}> </Route>
             </Route>
             <Route path="/dashboard/:username" element={<Dashboard />}> </Route>
-            <Route path="*" element={<h1>Not Found...</h1>}> </Route>
+            <Route path="*" element={<Login />}> </Route>
           </Routes>
         </PostProvider>
       </Suspense>
