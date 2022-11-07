@@ -1,8 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { IconButton, InputAdornment } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -12,7 +9,6 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { loginAPI } from '../../api/user.api';
 import PasswordTextField from '../../components/PasswordTextField';
@@ -33,11 +29,6 @@ function Login() {
         loginAPI(data)
     };
 
-    const [showPassword, setShowPassword] = useState(false)
-
-    const toggleShowPassword = () => {
-        setShowPassword(!showPassword)
-    }
 
     return (
 
