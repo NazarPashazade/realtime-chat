@@ -5,7 +5,7 @@ import PostProvider from '../contexts/PostContext';
 const Register = React.lazy(() => import('../pages/register/Register'))
 const Chat = React.lazy(() => import('../pages/chat/Chat'))
 const ChatContent = React.lazy(() => import('../pages/chat/ChatContent'))
-const Login = React.lazy(() => import('../pages/Login'))
+const Login = React.lazy(() => import('../pages/login/Login'))
 const Dashboard = React.lazy(() => import('../pages/Dashboard'))
 const Posts = React.lazy(() => import('../pages/posts/Posts'))
 

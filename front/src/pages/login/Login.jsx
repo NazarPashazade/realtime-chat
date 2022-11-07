@@ -1,22 +1,24 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { MenuItem, Select } from '@mui/material';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { IconButton, InputAdornment } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { registerAPI } from '../../api/user.api';
+import { loginAPI } from '../../api/user.api';
 import PasswordTextField from '../../components/PasswordTextField';
-import { registerSchema } from './regsiterSchema';
+import { loginSchema } from './loginSchema';
 
-function Register() {
+function Login() {
 
     const theme = createTheme();
 
@@ -24,16 +26,23 @@ function Register() {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm({ resolver: yupResolver(registerSchema) });
+    } = useForm({ resolver: yupResolver(loginSchema) });
 
 
-    const registerUser = (data) => {
-        registerAPI(data)
+    const login = (data) => {
+        loginAPI(data)
     };
+
+    const [showPassword, setShowPassword] = useState(false)
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword)
+    }
 
     return (
 
         <>
+
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -46,22 +55,14 @@ function Register() {
                         }}
                     >
                         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                            <LockOutlinedIcon />
+                            <LoginOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
-                            Sign up
+                            Sign In
                         </Typography>
-                        <Box component="form" onSubmit={handleSubmit(registerUser)} sx={{ mt: 3 }}>
+                        <Box component="form" onSubmit={handleSubmit(login)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
-                                <Grid item xs={12}>
-                                    <TextField
-                                        required
-                                        fullWidth
-                                        label="Username"
-                                        autoFocus
-                                        {...register("username")}
-                                    />
-                                </Grid>
+
                                 <Grid item xs={12}>
                                     <TextField
                                         required
@@ -70,18 +71,6 @@ function Register() {
                                         autoComplete="email"
                                         {...register("email")}
                                     />
-                                </Grid>
-
-                                <Grid item xs={12}>
-                                    <Select
-                                        name="gender"
-                                        label="Gender"
-                                        {...register("gender")}
-                                        fullWidth
-                                    >
-                                        <MenuItem value={'SINGLE'}>Single</MenuItem>
-                                        <MenuItem value={'MARRIED'}>Married</MenuItem>
-                                    </Select>
                                 </Grid>
 
                                 <Grid item xs={12}>
@@ -95,23 +84,15 @@ function Register() {
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
                             >
-                                Sign Up
+                                Sign In
                             </Button>
-                            <Grid container justifyContent="flex-end">
-                                <Grid item>
-                                    <Link href="/login" variant="body2">
-                                        Already have an account? Sign in
-                                    </Link>
-                                </Grid>
-                            </Grid>
+
                         </Box>
                     </Box>
                 </Container>
             </ThemeProvider>
-
-
         </>
     )
 }
 
-export default Register;
+export default Login;
