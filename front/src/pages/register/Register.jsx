@@ -13,7 +13,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useForm } from 'react-hook-form';
 import { registerAPI } from '../../api/user.api';
-import PasswordTextField from '../../components/PasswordTextField';
+import PasswordTextField from '../../components/passport/PasswordTextField';
 import { registerSchema } from './regsiterSchema';
 
 function Register() {

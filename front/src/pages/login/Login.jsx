@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useForm } from 'react-hook-form';
 import { loginAPI } from '../../api/user.api';
-import PasswordTextField from '../../components/PasswordTextField';
+import PasswordTextField from '../../components/passport/PasswordTextField';
 import { Notify } from '../../components/Notification';
 import { loginSchema } from './loginSchema';
 import { toast } from 'react-toastify';

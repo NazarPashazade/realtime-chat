@@ -25,7 +25,7 @@ function Chat() {
         <>
             <Grid container spacing={2}>
 
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
 
                     {!showChat ?
                         <div className="join-chat-container">
@@ -37,7 +37,7 @@ function Chat() {
                         </div>
                         : <CustomChat socket={socket} author={username} room={room} />
                     }
-                </Grid>
+                </Grid> */}
 
                 <Grid item xs={3}>
                     <ChatMenu />

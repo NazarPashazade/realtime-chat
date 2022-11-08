@@ -1,0 +1,26 @@
+@import "../../assests//common/variables";
+
+.menuItemContainer {
+   margin: "5px";
+   color:'black';
+}
+
+.odd {
+   @extend .menuItemContainer;
+   background-color: $color-grey-light;
+}
+
+.notOdd {
+   @extend .menuItemContainer;
+   background-color: $color-grey-white;
+}
+
+
+.username {
+   @media(max-width: $breakpoint-md) {
+      display: none;
+   }
+   @media(min-width: $breakpoint-md) {
+      display: block;
+   }
+}

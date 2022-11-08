@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 function PasswordTextField({ name, registerFn }) {
 
-
     const [showPassword, setShowPassword] = useState(false)
 
     const toggleShowPassword = () => {

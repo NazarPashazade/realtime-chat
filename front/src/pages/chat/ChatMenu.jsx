@@ -1,25 +1,16 @@
-import PersonIcon from '@mui/icons-material/Person';
-import { MenuItem, MenuList, Paper, Typography } from '@mui/material';
+import { MenuList, Paper } from '@mui/material';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { users } from '../../api/user.api';
+import { userList } from '../../api/user.api';
+import ChatMenuItem from '../../components/chat-menu-item/ChatMenuItem';
 
 export default function ChatMenu() {
-    const navigate = useNavigate()
 
     return (
-        <Paper sx={{ width: 230, margin: 2 }}>
+        <Paper style={{ height: '400px' }} sx={{ m: 1, mr: 0 }}>
             <MenuList>
-
-                {users.map((username, i) => {
-                    return <MenuItem key={i} onClick={() => navigate(`/chat/${username}`)}>
-                        <PersonIcon style={{ paddingRight: 15 }} />
-                        <Typography variant="inherit"> {username} </Typography>
-                    </MenuItem>
-                })}
-
+                {userList.map((user, i) => <ChatMenuItem index={i} user={user} />)}
             </MenuList>
-        </Paper >
+        </ Paper >
     );
 }
 
