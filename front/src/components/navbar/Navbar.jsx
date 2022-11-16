@@ -9,13 +9,14 @@ import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
-import Menu from '@mui/material/Menu';
 import { alpha, styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MobileMenu } from '../mobile-menu/MobileMenu';
+import { ProfileMenu } from '../profile-menu/ProfileMenu';
+import PsychologyIcon from '@mui/icons-material/Psychology';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -68,16 +69,16 @@ export const navBarItems = {
 }
 
 export const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [profileAnchorEl, setProfileAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const { Messages, Notifications } = navBarItems;
 
-  const isMenuOpen = !!anchorEl;
+  const isMenuOpen = !!profileAnchorEl;
   const isMobileMenuOpen = !!mobileMoreAnchorEl;
 
   const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+    setProfileAnchorEl(event.currentTarget);
   };
 
   const handleMobileMenuClose = () => {
@@ -85,12 +86,11 @@ export const Navbar = () => {
   };
 
   const handleMenuClose = () => {
-    setAnchorEl(null);
+    setProfileAnchorEl(null);
     handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = (event) => {
-    console.log("fffffffff");
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
@@ -119,7 +119,7 @@ export const Navbar = () => {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            <PsychologyIcon style={{ fontSize: 35 }} />
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -182,7 +182,7 @@ export const Navbar = () => {
         </Toolbar>
       </AppBar>
       <MobileMenu id={mobileMenuId} isMobileMenuOpen={isMobileMenuOpen} handleMobileMenuClose={handleMobileMenuClose} handleProfileMenuOpen={handleProfileMenuOpen} mobileMoreAnchorEl={mobileMoreAnchorEl} />
-      <Menu id={menuId} isMenuOpen={isMenuOpen} handleMenuClose={handleMenuClose} anchorEl={anchorEl} />
+      <ProfileMenu id={menuId} isMenuOpen={isMenuOpen} handleMenuClose={handleMenuClose} anchorEl={profileAnchorEl} />
     </Box>
   );
 }

@@ -1,7 +1,7 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
-import uuid from 'react-uuid';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import uuid from 'react-uuid';
 
 
 function CustomChat({ socket, author, room }) {
