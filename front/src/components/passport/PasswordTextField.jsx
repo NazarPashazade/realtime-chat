@@ -16,7 +16,7 @@ function PasswordTextField({ name, registerFn }) {
         <TextField
             required
             fullWidth
-            label="wefwefefef"
+            label="Password"
             type={showPassword ? "text" : "password"}
             InputProps={{
                 endAdornment:

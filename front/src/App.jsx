@@ -1,13 +1,13 @@
 import React from 'react';
+import { Navbar } from './components/navbar/Navbar';
 import { NotificationDialog } from './components/Notification';
-import Header from './pages/Header';
 import Router from './routers/Router';
 
 function App() {
   
   return (
     <>
-      <Header />
+      <Navbar />
       <Router />
       <NotificationDialog/>
     </>
