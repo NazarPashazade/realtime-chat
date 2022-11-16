@@ -10,7 +10,6 @@ export default function ChatMenuItem({ user, index }) {
 
     const navigate = useNavigate()
 
-
     return (
         <MenuItem key={index} className={index % 2 == 0 ? styles.odd : styles.notOdd} onClick={() => navigate(`/chat/${username}`)}>
             <UserAvatar user={user} />

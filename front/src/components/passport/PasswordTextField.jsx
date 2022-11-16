@@ -16,12 +16,13 @@ function PasswordTextField({ name, registerFn }) {
         <TextField
             required
             fullWidth
-            label="Password"
+            label="wefwefefef"
             type={showPassword ? "text" : "password"}
             InputProps={{
                 endAdornment:
                     <InputAdornment position="end">
                         <IconButton
+                            id="iconButton"
                             aria-label="toggle password visibility"
                             onClick={toggleShowPassword}
                         >
