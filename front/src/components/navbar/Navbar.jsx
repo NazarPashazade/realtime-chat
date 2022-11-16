@@ -1,8 +1,8 @@
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import PsychologyIcon from '@mui/icons-material/Psychology';
 import SearchIcon from '@mui/icons-material/Search';
 import AppBar from '@mui/material/AppBar';
 import Badge from '@mui/material/Badge';
@@ -16,7 +16,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MobileMenu } from '../mobile-menu/MobileMenu';
 import { ProfileMenu } from '../profile-menu/ProfileMenu';
-import PsychologyIcon from '@mui/icons-material/Psychology';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -111,16 +110,9 @@ export const Navbar = () => {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
             <PsychologyIcon style={{ fontSize: 35 }} />
-          </Typography>
+          </IconButton>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -132,6 +124,15 @@ export const Navbar = () => {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+
+            <IconButton
+              onClick={() => navigate(Messages.url)}
+              size="small"
+              style={{marginRight:15}}
+              color="inherit">
+              <Typography variant="inherit"> About us </Typography>
+            </IconButton>
+ 
 
             <IconButton
               onClick={() => navigate(Messages.url)}
