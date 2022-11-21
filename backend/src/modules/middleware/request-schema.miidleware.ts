@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { validationResult } from "express-validator";
 
 
-export const validateRequestSchema = (req: Request, res: Response, next: NextFunction) => {
+export const RequestSchemaMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {

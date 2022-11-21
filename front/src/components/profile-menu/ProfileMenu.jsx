@@ -37,8 +37,8 @@ export const ProfileMenu = ({ id, isMenuOpen, handleMenuClose, anchorEl }) => {
         </IconButton>
         <p>{Profile.title}</p>
       </MenuItem>
-      
-      <MenuItem onClick={() => navigate(Posts.url)}>
+
+      <MenuItem onClick={() => navigate(Posts.url)} style={{ height: 55 }}>
         <IconButton size="large" aria-label="show new mails" color="inherit">
           <Badge badgeContent={1} color="error">
             <PostAddIcon />

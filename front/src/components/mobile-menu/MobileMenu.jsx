@@ -32,7 +32,7 @@ export const MobileMenu = ({ id, isMobileMenuOpen, handleMobileMenuClose, handle
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={() => navigate(Messages.url)}>
+      <MenuItem onClick={() => navigate(Messages.url)} style={{ height: 55 }}>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
